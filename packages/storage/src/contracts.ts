@@ -9,6 +9,7 @@ export interface DataStore {
   getResource(id: string): Promise<Resource | null>;
   createResourceVersion(version: ResourceVersion): Promise<void>;
   getResourceVersion(id: string): Promise<ResourceVersion | null>;
+  getResourceVersions(resourceId: string): Promise<ResourceVersion[]>;
 }
 
 export interface BlobStore {
@@ -22,3 +23,4 @@ export interface StorageBackend {
   data: DataStore;
   blobs: BlobStore;
 }
+

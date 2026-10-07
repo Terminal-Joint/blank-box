@@ -15,4 +15,9 @@ export class InMemoryDataStore implements DataStore {
   async getResource(id: string) { return this.resources.get(id) ?? null; }
   async createResourceVersion(v: ResourceVersion) { this.versions.set(v.id, v); }
   async getResourceVersion(id: string) { return this.versions.get(id) ?? null; }
+  async getResourceVersions(resourceId: string) {
+  return [...this.versions.values()]
+    .filter((version) => version.resourceId === resourceId)
+    .sort((a, b) => a.version - b.version);
+}
 }
