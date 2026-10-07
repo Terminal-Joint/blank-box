@@ -32,7 +32,7 @@ const server = createServer(async (req, res) => {
   const path = new URL(req.url ?? "/", `http://${req.headers.host ?? "localhost"}`).pathname;
 
   if (method === "OPTIONS") return json(res, 204, {});
-  if (method === "GET" && path === "/health") return json(res, 200, { ok: true, service: "blank-box-api" });
+  if (method === "GET" && path === "/health") return json(res, 200, { ok: true, service: "solocrate-api" });
   if (method === "GET" && path === "/sandboxes") return json(res, 200, { sandboxes: [...sandboxes.values()].map(x => x.sandbox) });
 
   if (method === "POST" && path === "/sandboxes") {
@@ -97,4 +97,4 @@ if (method === "POST" && path === "/resources") {
   return json(res, 404, { error: "Not found" });
 });
 
-server.listen(PORT, "0.0.0.0", () => console.log(`Blank Box API listening on http://localhost:${PORT}`));
+server.listen(PORT, "0.0.0.0", () => console.log(`SoloCrate API listening on ${PORT}`));
