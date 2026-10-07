@@ -6,8 +6,17 @@
     "strict": true,
     "declaration": true,
     "sourceMap": true,
-    "outDir": "dist",
-    "skipLibCheck": true
+    "rootDir": ".",
+    "outDir": "dist"
   },
-  "include": ["packages/**/*.ts", "adapters/**/*.ts", "apps/**/*.ts", "tests/**/*.ts"]
+  "include": [
+    "packages",
+    "adapters",
+    "apps"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests"
+  ]
 }
