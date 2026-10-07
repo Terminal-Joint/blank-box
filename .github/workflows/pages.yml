@@ -1,4 +1,4 @@
-name: Deploy Blank Box Web
+name: Deploy Solocrate Web
 on:
   push:
     branches: [main]
