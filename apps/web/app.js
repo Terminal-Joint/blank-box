@@ -1,4 +1,4 @@
-const API_BASE = window.BLANK_BOX_API || "http://localhost:3000";
+const API_BASE = "https://solocrate.onrender.com";
 
 const form = document.querySelector("#sandbox-form");
 const nameInput = document.querySelector("#name");
