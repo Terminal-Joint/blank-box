@@ -89,7 +89,7 @@ const server = createServer(async (req, res) => {
   if (method === "OPTIONS") {
     res.writeHead(204, {
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "Content-Type",
+      "Access-Control-Allow-Headers": "Content-Type, X-File-Name",
       "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
     });
     return res.end();
